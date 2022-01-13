@@ -36,7 +36,7 @@ public class Example2 {
     //Taking a book and adding to the library report map
     public static void takeBook(List<String> b, Map<LocalDate, List<String>> lR, long minusDays) {
         if (b.isEmpty()) return;
-        System.out.println(ANSI_RED + "Choose book, which you want to take: " + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nChoose book, which you want to take: " + ANSI_RESET);
         int i = 0;
         for (String j : b) {
             System.out.println(i + " - " + j);
@@ -56,7 +56,7 @@ public class Example2 {
 
     //Show if we took books on a certain day
     public static void showTakenBooks(Map<LocalDate, List<String>> lR) {
-        System.out.println(ANSI_RED + "Enter data for example 2020-10-19:" + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nEnter data for example 2020-10-19:" + ANSI_RESET);
         String date = scanner.next();
         String[] dayList = date.split("-");
         int year = Integer.valueOf(dayList[0]);
@@ -65,14 +65,14 @@ public class Example2 {
         if (lR.containsKey(LocalDate.of(year, month, day))) {
             System.out.println(lR.get(LocalDate.of(year, month, day)));
         } else {
-            System.out.println("There are no books for this date");
+            System.out.println("\nThere are no books for this date");
         }
     }
 
     //Print all taken books for 30 days
     public static void printTakenBooks(Map<LocalDate, List<String>> lR) throws InterruptedException {
         TimeUnit.SECONDS.sleep(1);
-        System.out.println(ANSI_RED + "Print taken books" + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nPrint taken books" + ANSI_RESET);
         TimeUnit.SECONDS.sleep(4);
         LocalDate date = LocalDate.now().minusMonths(1);
         do {
@@ -89,13 +89,13 @@ public class Example2 {
     }
 
     public static void showInRange(Map<LocalDate, List<String>> lR) {
-        System.out.println(ANSI_RED + "Range of dates of taken books" + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nRange of dates of taken books" + ANSI_RESET);
         for (LocalDate key : lR.keySet()) {
             System.out.println(key);
         }
 
         List<String> listOfBooks = new ArrayList<>();
-        System.out.println(ANSI_RED + "List of books for a whole range" + ANSI_RESET);
+        System.out.println(ANSI_RED + "\nList of books for a whole range" + ANSI_RESET);
         for (List<String> value : lR.values()) {
             listOfBooks.add(String.valueOf(value));
         }
