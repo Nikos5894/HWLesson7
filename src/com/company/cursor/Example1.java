@@ -3,6 +3,9 @@ package com.company.cursor;
 import java.time.LocalDate;
 import java.util.*;
 
+/*
+   Functionality so that we could take an one book in one day
+*/
 public class Example1 {
     static Scanner scanner = new Scanner(System.in);
 
